@@ -1,0 +1,301 @@
+<!-- 
+==========================================
+            SEMANTIC HTML
+==========================================
+
+------------------------------------------
+WHAT IS SEMANTIC HTML?
+------------------------------------------
+
+- Semantic HTML introduces meaning to the web page rather than just presentation
+- A semantic element clearly describes its meaning to both the browser and the developer
+- Examples: <form>, <table>, and <article> - clearly define their content
+- Non-semantic elements: <div> and <span> - tell nothing about their content
+
+In HTML, semantics refers to the meaning of a piece of code — for example, "what effect does running that line of JavaScript have?", or "what purpose does that HTML element have?" rather than "what does it look like?".
+
+------------------------------------------
+SEMANTIC TAGS
+------------------------------------------
+
+HTML5 introduced many semantic elements to help structure web pages. Here are the key semantic elements:
+
+1. <header>:
+- Represents a container for introductory content or a set of navigational links
+- Typically contains headings, logos, search forms, and navigation menus
+- Can be used multiple times in a document
+
+Example:
+<header>
+  <h1>My Website</h1>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+2. <nav>:
+- Defines a set of navigation links
+- Not all links should be inside a <nav> element, only major block of navigation links
+
+Example:
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+3. <main>:
+- Specifies the main content of a document
+- There should be only one <main> element in a document
+- Should not include content that is repeated across documents (logos, search forms, etc.)
+
+Example:
+<main>
+  <h1>Most Popular Browsers</h1>
+  <article>
+    <h2>Google Chrome</h2>
+    <p>Google Chrome is a web browser developed by Google, released in 2008.</p>
+  </article>
+  <article>
+    <h2>Mozilla Firefox</h2>
+    <p>Firefox is a web browser developed by Mozilla Foundation.</p>
+  </article>
+</main>
+
+4. <article>:
+- Represents a self-contained composition in a document
+- Should make sense on its own and be independently distributable
+- Examples: forum post, blog post, news story, comment
+
+Example:
+<article>
+  <h2>Article Title</h2>
+  <p>Article content goes here...</p>
+  <footer>
+    <p>Posted by: John Doe</p>
+    <p>Contact: <a href="mailto:john@example.com">john@example.com</a></p>
+  </footer>
+</article>
+
+5. <section>:
+- Defines a section in a document
+- A section is a thematic grouping of content, typically with a heading
+- Examples: chapters, tabbed content areas, numbered sections of a thesis
+
+Example:
+<section>
+  <h2>Section Title</h2>
+  <p>Content for this section...</p>
+</section>
+
+6. <aside>:
+- Defines content that is tangentially related to the content around it
+- Often represented as a sidebar or call-out box
+- Examples: pull quotes, sidebars, related links
+
+Example:
+<aside>
+  <h3>Related Articles</h3>
+  <ul>
+    <li><a href="#">Article 1</a></li>
+    <li><a href="#">Article 2</a></li>
+  </ul>
+</aside>
+
+7. <footer>:
+- Defines a footer for a document or section
+- Typically contains authorship information, copyright information, contact info, sitemap, back to top links, related documents
+- Can be used multiple times in a document
+
+Example:
+<footer>
+  <p>&copy; 2025 My Website. All rights reserved.</p>
+  <address>
+    Contact: <a href="mailto:info@example.com">info@example.com</a>
+  </address>
+</footer>
+
+8. <figure> and <figcaption>:
+- <figure> specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
+- <figcaption> defines a caption for a <figure> element
+
+Example:
+<figure>
+  <img src="pic_mountain.jpg" alt="Mountain">
+  <figcaption>Fig.1 - Mountain View, California</figcaption>
+</figure>
+
+9. <time>:
+- Defines a specific time or datetime
+- The datetime attribute represents the machine-readable format
+
+Example:
+<p>The concert starts at <time datetime="2025-07-07T20:00">8:00pm</time>.</p>
+<p>I have a meeting on <time datetime="2025-02-14">Valentine's Day</time>.</p>
+
+10. <mark>:
+- Defines text that should be highlighted or marked
+- Used to highlight parts of text for reference
+
+Example:
+<p>Do not forget to buy <mark>milk</mark> today.</p>
+
+11. <details> and <summary>:
+- <details> specifies additional details that the user can open and close on demand
+- <summary> defines a visible heading for the details element
+
+Example:
+<details>
+  <summary>Click to show/hide details</summary>
+  <p>Additional information that can be hidden or shown.</p>
+</details>
+
+12. Other Semantic Elements:
+- <address>: Defines contact information for the author/owner of a document
+- <abbr>: Defines an abbreviation or acronym
+- <cite>: Defines the title of a creative work
+- <code>: Defines a piece of computer code
+- <blockquote>: Defines a section that is quoted from another source
+- <q>: Defines a short inline quotation
+
+------------------------------------------
+WHY SEMANTIC TAGS MATTER
+------------------------------------------
+
+1. Accessibility:
+- Screen readers and other assistive technologies use semantic elements to help users navigate the page
+- Proper semantic markup helps users with disabilities understand the content and structure of your web page
+- ARIA (Accessible Rich Internet Applications) roles can enhance semantics for accessibility
+
+2. SEO (Search Engine Optimization):
+- Search engines give more weight to keywords inside semantic elements
+- Semantic HTML helps search engines understand the structure and content of your web page
+- Better understanding leads to better indexing and potentially higher rankings
+
+3. Code Maintainability:
+- Semantic HTML makes your code more readable and easier to maintain
+- Developers can quickly understand the structure and purpose of different parts of the page
+- Reduces the need for excessive class names or comments to explain the code
+
+4. Consistent Styling:
+- Semantic elements provide natural styling hooks
+- Makes it easier to apply consistent styling across your website
+- Reduces the need for excessive class names or IDs
+
+5. Future-Proofing:
+- Semantic HTML is more likely to be compatible with future browsers and technologies
+- As web standards evolve, semantic markup is more likely to be interpreted correctly
+
+6. Mobile Friendliness:
+- Some mobile browsers use semantics to display content appropriately
+- Proper semantic structure helps with responsive design
+
+7. Reusability:
+- Semantic components are easier to reuse across different projects
+- Promotes consistent patterns and best practices
+
+------------------------------------------
+SEMANTIC HTML VS. DIV SOUP
+------------------------------------------
+
+Non-Semantic Approach (Div Soup):
+<div class="header">
+  <div class="logo">My Website</div>
+  <div class="navigation">
+    <div class="nav-item"><a href="#home">Home</a></div>
+    <div class="nav-item"><a href="#about">About</a></div>
+  </div>
+</div>
+<div class="main-content">
+  <div class="article">
+    <div class="article-title">Article Title</div>
+    <div class="article-content">Content here...</div>
+  </div>
+  <div class="sidebar">
+    <div class="related-links">Related Links</div>
+  </div>
+</div>
+<div class="footer">
+  <div class="copyright">Copyright 2025</div>
+</div>
+
+Semantic Approach:
+<header>
+  <h1>My Website</h1>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <article>
+    <h2>Article Title</h2>
+    <p>Content here...</p>
+  </article>
+  <aside>
+    <h3>Related Links</h3>
+  </aside>
+</main>
+<footer>
+  <p>Copyright 2025</p>
+</footer>
+
+The semantic approach:
+- Is more readable and self-documenting
+- Provides better accessibility
+- Requires less CSS classes for styling hooks
+- Gives more meaning to the content
+
+------------------------------------------
+BEST PRACTICES FOR SEMANTIC HTML
+------------------------------------------
+
+1. Use the right element for the right job:
+- Use <button> for buttons, not <div> with click handlers
+- Use <a> for links, not <span> with click handlers
+- Use <table> for tabular data, not for layout
+
+2. Heading hierarchy:
+- Use <h1> through <h6> in a logical order
+- Don't skip heading levels (e.g., from <h1> to <h3>)
+- Each page should have only one <h1>
+
+3. Lists:
+- Use <ul> for unordered lists
+- Use <ol> for ordered lists
+- Use <dl> for definition lists
+
+4. Forms:
+- Use <label> for form labels
+- Associate labels with inputs using the "for" attribute
+- Group related form elements with <fieldset> and <legend>
+
+5. Text:
+- Use <em> for emphasis, not <i>
+- Use <strong> for strong importance, not <b>
+- Use <mark> for highlighting text
+
+6. Structure:
+- Use <header>, <footer>, <main>, <article>, <section>, <aside>, and <nav> appropriately
+- Nest elements logically (e.g., <article> can contain <header> and <footer>)
+
+7. Media:
+- Use <figure> and <figcaption> for images with captions
+- Use <audio> and <video> for media content
+
+8. Avoid overusing <div> and <span>:
+- Only use them when no semantic alternative exists
+- Use them for styling and layout purposes, not for content structure
+
+==========================================
+-->
+
+<!-- Your practice HTML code goes here (outside the comments) -->

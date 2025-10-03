@@ -1,0 +1,379 @@
+<!-- 
+==========================================
+         ADVANCED HTML CONCEPTS
+==========================================
+
+------------------------------------------
+META TAGS
+------------------------------------------
+
+- Meta tags provide metadata about the HTML document
+- They are placed in the <head> section of an HTML page
+- Meta tags are not displayed on the page but are used by browsers and search engines
+
+1. Character Set:
+- Specifies the character encoding for the HTML document
+<meta charset="UTF-8">
+
+2. Viewport:
+- Controls the viewport (the user's visible area of a web page) on mobile devices
+- Essential for responsive web design
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+3. Description:
+- Provides a brief description of the page
+- Often displayed in search engine results
+<meta name="description" content="This is a description of the webpage content">
+
+4. Keywords:
+- Specifies keywords for search engines (less important now for SEO)
+<meta name="keywords" content="HTML, CSS, JavaScript, tutorial">
+
+5. Author:
+- Specifies the author of the page
+<meta name="author" content="John Doe">
+
+6. Robots:
+- Controls how search engines index and follow links on the page
+<meta name="robots" content="index, follow">
+Options include:
+- index: Allow search engines to index the page
+- noindex: Prevent search engines from indexing the page
+- follow: Allow search engines to follow links on the page
+- nofollow: Prevent search engines from following links on the page
+
+7. Social Media Meta Tags:
+
+Open Graph (Facebook):
+<meta property="og:title" content="Your Page Title">
+<meta property="og:description" content="Your page description">
+<meta property="og:image" content="https://example.com/image.jpg">
+<meta property="og:url" content="https://example.com/page">
+<meta property="og:type" content="website">
+
+Twitter Card:
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@yourusername">
+<meta name="twitter:title" content="Your Page Title">
+<meta name="twitter:description" content="Your page description">
+<meta name="twitter:image" content="https://example.com/image.jpg">
+
+8. Refresh:
+- Automatically refreshes the page after a specified time
+<meta http-equiv="refresh" content="30">  [Refresh every 30 seconds]
+
+9. Content Security Policy:
+- Helps prevent cross-site scripting (XSS) attacks
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+
+------------------------------------------
+FAVICON
+------------------------------------------
+
+- A favicon is a small icon associated with a website
+- It appears in the browser tab, bookmarks, and history
+- Favicons help users identify your site visually
+
+Basic Favicon:
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+Modern Approach with Multiple Sizes:
+[Standard favicon]
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32" type="image/x-icon">
+
+[Apple Touch Icon (for iOS devices)]
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+
+[Android Chrome]
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+
+[Microsoft Windows]
+<meta name="msapplication-TileImage" content="mstile-144x144.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+
+Creating a Favicon:
+1. Create a square image (common sizes: 16x16, 32x32, 48x48, 64x64, 128x128, 256x256)
+2. Convert it to .ico format (or use .png for modern browsers)
+3. Place it in the root directory of your website or specify the path in the link tag
+
+------------------------------------------
+CONNECTING JS & CSS
+------------------------------------------
+
+1. Connecting CSS:
+
+External CSS:
+<link rel="stylesheet" href="styles.css">
+
+Internal CSS:
+<style>
+  body {
+    background-color: lightblue;
+  }
+  h1 {
+    color: navy;
+    margin-left: 20px;
+  }
+</style>
+
+Inline CSS:
+<h1 style="color: blue; text-align: center;">This is a heading</h1>
+
+CSS with Media Queries:
+<link rel="stylesheet" href="styles.css" media="screen">
+<link rel="stylesheet" href="print.css" media="print">
+
+2. Connecting JavaScript:
+
+External JavaScript:
+<script src="script.js"></script>
+
+Internal JavaScript:
+<script>
+  function myFunction() {
+    document.getElementById("demo").innerHTML = "Hello JavaScript!";
+  }
+</script>
+
+JavaScript with Attributes:
+- async: Script is executed asynchronously (while the page continues parsing)
+- defer: Script is executed when the page has finished parsing
+<script src="script.js" async></script>
+<script src="script.js" defer></script>
+
+JavaScript Placement:
+- In the <head>: Scripts are loaded before the body content
+- At the end of <body>: Scripts are loaded after the body content (often preferred for performance)
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Page</title>
+  [CSS is typically placed in the head]
+  <link rel="stylesheet" href="styles.css">
+  
+  [Critical JavaScript can be placed in the head with defer]
+  <script src="critical.js" defer></script>
+</head>
+<body>
+  [Content here]
+  
+  [Non-critical JavaScript is often placed at the end of the body]
+  <script src="script.js"></script>
+</body>
+</html>
+
+------------------------------------------
+HTML ENTITIES
+------------------------------------------
+
+- HTML entities are special characters that are used to display reserved characters in HTML
+- They start with an ampersand (&) and end with a semicolon (;)
+- They can be written as named entities or numeric entities
+
+Common HTML Entities:
+
+| Character | Entity Name | Numeric Entity | Description |
+|-----------|-------------|---------------|-------------|
+| &         | &amp;       | &#38;         | Ampersand   |
+| <         | &lt;        | &#60;         | Less than   |
+| >         | &gt;        | &#62;         | Greater than|
+| "         | &quot;      | &#34;         | Double quote|
+| '         | &apos;      | &#39;         | Apostrophe  |
+| ©         | &copy;      | &#169;        | Copyright   |
+| ®         | &reg;       | &#174;        | Registered  |
+| ™         | &trade;     | &#8482;       | Trademark   |
+| €         | &euro;      | &#8364;       | Euro        |
+| £         | &pound;     | &#163;        | Pound       |
+| ¥         | &yen;       | &#165;        | Yen         |
+| ×         | &times;     | &#215;        | Multiply    |
+| ÷         | &divide;    | &#247;        | Divide      |
+| ½         | &frac12;    | &#189;        | Half        |
+| ¼         | &frac14;    | &#188;        | Quarter     |
+| ¾         | &frac34;    | &#190;        | Three quarters |
+| °         | &deg;       | &#176;        | Degree      |
+| α         | &alpha;     | &#945;        | Alpha       |
+| β         | &beta;      | &#946;        | Beta        |
+| π         | &pi;        | &#960;        | Pi          |
+| &nbsp;    | &nbsp;      | &#160;        | Non-breaking space |
+| —         | &mdash;     | &#8212;       | Em dash     |
+| –         | &ndash;     | &#8211;       | En dash     |
+
+Example Usage:
+<p>The HTML entity for the copyright symbol is &copy; or &#169;</p>
+<p>To display HTML code like &lt;div&gt; on a webpage, you need to use entities.</p>
+<p>Price: &pound;50 or &euro;60</p>
+
+------------------------------------------
+ACCESSIBILITY BASICS
+------------------------------------------
+
+Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them. Here are some basic principles:
+
+1. Semantic HTML:
+- Use proper semantic elements (<header>, <nav>, <main>, etc.)
+- Provides structure and meaning to content
+- Helps screen readers and other assistive technologies
+
+2. Alternative Text for Images:
+- Use the alt attribute to provide text alternatives for images
+- Screen readers read this text to users who cannot see the image
+
+[Good example]
+<img src="chart.jpg" alt="Bar chart showing sales data for Q1 2025">
+
+[For decorative images]
+<img src="decorative-line.jpg" alt="">
+
+3. ARIA (Accessible Rich Internet Applications):
+- ARIA attributes provide additional information about elements to assistive technologies
+- Use ARIA roles, states, and properties when HTML semantics are not sufficient
+
+[Example of ARIA roles]
+<div role="navigation" aria-label="Main menu">
+  Navigation items
+</div>
+
+[Example of ARIA states]
+<button aria-expanded="false" aria-controls="dropdown1">Menu</button>
+<div id="dropdown1" hidden>
+  Dropdown content
+</div>
+
+4. Keyboard Navigation:
+- Ensure all interactive elements are keyboard accessible
+- Use tabindex attribute when necessary
+- Visible focus indicators help keyboard users
+
+[Natural tab order (preferred)]
+<button>Click Me</button>
+
+[Custom tab order (use sparingly)]
+<div tabindex="0" role="button">Custom Button</div>
+
+5. Form Accessibility:
+- Associate labels with form controls
+- Provide clear instructions and error messages
+- Group related form elements with fieldset and legend
+
+<label for="username">Username:</label>
+<input type="text" id="username" name="username">
+
+<fieldset>
+  <legend>Contact Preferences</legend>
+  <input type="checkbox" id="email" name="contact" value="email">
+  <label for="email">Email</label>
+  <input type="checkbox" id="phone" name="contact" value="phone">
+  <label for="phone">Phone</label>
+</fieldset>
+
+6. Color and Contrast:
+- Ensure sufficient color contrast between text and background
+- Don't rely on color alone to convey information
+- WCAG recommends a contrast ratio of at least 4.5:1 for normal text
+
+7. Headings and Structure:
+- Use headings (<h1> to <h6>) to create a logical document outline
+- Don't skip heading levels
+- Each page should have one <h1> element
+
+8. Tables:
+- Use table headers (<th>) with scope attribute
+- Use caption to provide a title for the table
+- Use summary attribute to provide an overview (HTML4) or aria-describedby (HTML5)
+
+<table>
+  <caption>Monthly Savings</caption>
+  <tr>
+    <th scope="col">Month</th>
+    <th scope="col">Savings</th>
+  </tr>
+  <tr>
+    <th scope="row">January</th>
+    <td>$100</td>
+  </tr>
+</table>
+
+9. Skip Navigation:
+- Provide a way for users to skip repetitive navigation
+- Especially helpful for keyboard and screen reader users
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+[Navigation and other content]
+<main id="main-content">
+  [Main content]
+</main>
+
+10. Language:
+- Specify the language of your page
+- Specify when the language changes within the page
+
+<html lang="en">
+  [English content]
+  <p>This is in English.</p>
+  
+  [Spanish phrase]
+  <p lang="es">Hola, ¿cómo estás?</p>
+</html>
+
+11. Multimedia:
+- Provide captions for videos
+- Provide transcripts for audio content
+- Ensure media controls are keyboard accessible
+
+<video controls>
+  <source src="video.mp4" type="video/mp4">
+  <track src="captions.vtt" kind="subtitles" srclang="en" label="English">
+  Your browser does not support the video tag.
+</video>
+
+12. Testing:
+- Test with keyboard navigation
+- Test with screen readers (like NVDA, JAWS, or VoiceOver)
+- Use accessibility evaluation tools (like WAVE, axe, or Lighthouse)
+
+------------------------------------------
+HTML5 SHIV
+------------------------------------------
+
+- HTML5 Shiv is a JavaScript workaround to enable styling of HTML5 elements in versions of Internet Explorer prior to version 9
+- It's less relevant today but important to know for supporting legacy browsers
+
+[For Internet Explorer versions before 9]
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+
+------------------------------------------
+DATA ATTRIBUTES
+------------------------------------------
+
+- Custom data attributes allow you to store extra information on HTML elements
+- They start with data- followed by your custom name
+- They can be accessed via JavaScript or targeted with CSS
+
+<article
+  data-author="John Doe"
+  data-columns="3"
+  data-index-number="12314"
+  data-parent="cars">
+  <h1>Article Title</h1>
+</article>
+
+Accessing with JavaScript:
+// Using getAttribute
+const article = document.querySelector('article');
+const author = article.getAttribute('data-author');
+
+// Using dataset property
+const columns = article.dataset.columns;
+const indexNumber = article.dataset.indexNumber;
+
+Targeting with CSS:
+article[data-columns='3'] {
+  width: 400px;
+}
+
+==========================================
+-->
+
+<!-- Your practice HTML code goes here (outside the comments) -->

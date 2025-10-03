@@ -1,0 +1,209 @@
+<!-- 
+==========================================
+             LINKS & MEDIA
+==========================================
+
+------------------------------------------
+ANCHOR TAGS
+------------------------------------------
+
+- The <a> tag defines a hyperlink
+- The href attribute specifies the URL of the page the link goes to
+- Links can point to external websites, internal pages, file downloads, email addresses, or specific locations on the same page
+
+External Links:
+<a href="https://www.example.com">Visit Example.com</a>
+
+Internal Links (linking to pages within the same website):
+<a href="about.html">About Us</a>
+
+Email Links:
+<a href="mailto:info@example.com">Send Email</a>
+
+Phone Links:
+<a href="tel:+1234567890">Call Us</a>
+
+File Download Links:
+<a href="files/document.pdf" download>Download PDF</a>
+
+Anchor Links (linking to a specific part of a page):
+<!-- Create an anchor -->
+<h2 id="section2">Section 2</h2>
+
+<!-- Link to the anchor -->
+<a href="#section2">Go to Section 2</a>
+
+<!-- Link to an anchor on another page -->
+<a href="another-page.html#section3">Go to Section 3 on Another Page</a>
+
+Link Attributes:
+- target: Specifies where to open the linked document
+  - _self: Default. Opens in the same frame/window
+  - _blank: Opens in a new window or tab
+  - _parent: Opens in the parent frame
+  - _top: Opens in the full body of the window
+- title: Adds a tooltip to the link
+- rel: Specifies the relationship between the current document and the linked document
+  - nofollow: Tells search engines not to follow the link
+  - noopener: Prevents the new page from accessing the window.opener property
+  - noreferrer: Prevents passing the referrer information to the linked page
+
+Example:
+<a href="https://www.example.com" target="_blank" rel="noopener noreferrer">
+  Visit Example.com in a new tab
+</a>
+
+------------------------------------------
+IMAGES
+------------------------------------------
+
+- The <img> tag is used to embed an image in an HTML page
+- The <img> tag is empty, it contains attributes only, and does not have a closing tag
+- The src attribute specifies the path to the image
+- The alt attribute provides alternative text for the image if it cannot be displayed
+
+Basic Image:
+<img src="image.jpg" alt="Description of the image">
+
+Image Size:
+- The width and height attributes specify the width and height of the image
+- If only one attribute is specified, the other will be adjusted automatically to maintain the aspect ratio
+
+<img src="image.jpg" alt="Description" width="500" height="300">
+
+Image as a Link:
+<a href="https://www.example.com">
+  <img src="logo.png" alt="Company Logo">
+</a>
+
+Responsive Images:
+- The max-width property in CSS can be used to make images responsive
+- The srcset attribute allows you to specify different images for different screen sizes
+
+<img src="small.jpg" alt="Description" 
+     srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w"
+     sizes="(max-width: 600px) 500px, (max-width: 1200px) 1000px, 1500px">
+
+Image Maps:
+- The <map> tag defines an image map
+- The <area> tag defines the clickable areas in the image map
+
+<img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.html">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.html">
+  <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.html">
+</map>
+
+------------------------------------------
+AUDIO
+------------------------------------------
+
+- The <audio> tag is used to embed sound content in an HTML document
+- The src attribute specifies the path to the audio file
+- The controls attribute adds audio controls, like play, pause, and volume
+
+Basic Audio:
+<audio controls>
+  <source src="audio.mp3" type="audio/mpeg">
+  <source src="audio.ogg" type="audio/ogg">
+  Your browser does not support the audio element.
+</audio>
+
+Audio Attributes:
+- autoplay: Specifies that the audio will start playing as soon as it is ready
+- controls: Displays audio controls (play/pause, volume, etc.)
+- loop: Specifies that the audio will start over again when finished
+- muted: Specifies that the audio output should be muted
+- preload: Specifies if and how the audio should be loaded when the page loads
+  - auto: The browser should load the entire audio when the page loads
+  - metadata: The browser should load only metadata when the page loads
+  - none: The browser should not load the audio when the page loads
+
+Example:
+<audio controls autoplay loop muted preload="auto">
+  <source src="audio.mp3" type="audio/mpeg">
+  <source src="audio.ogg" type="audio/ogg">
+  Your browser does not support the audio element.
+</audio>
+
+------------------------------------------
+VIDEO
+------------------------------------------
+
+- The <video> tag is used to embed video content in an HTML document
+- The src attribute specifies the path to the video file
+- The controls attribute adds video controls, like play, pause, and volume
+
+Basic Video:
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+
+Video Attributes:
+- autoplay: Specifies that the video will start playing as soon as it is ready
+- controls: Displays video controls (play/pause, volume, etc.)
+- loop: Specifies that the video will start over again when finished
+- muted: Specifies that the audio output of the video should be muted
+- poster: Specifies an image to be shown while the video is downloading, or until the user hits the play button
+- preload: Specifies if and how the video should be loaded when the page loads
+- width, height: Specifies the width and height of the video player
+
+Example:
+<video width="320" height="240" controls poster="poster.jpg" preload="auto">
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+
+------------------------------------------
+EMBEDS
+------------------------------------------
+
+1. The <iframe> Element:
+- Used to embed another document within the current HTML document
+- Commonly used for embedding maps, videos, or other web pages
+
+Example (YouTube video):
+<iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/VIDEO_ID" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+</iframe>
+
+Example (Google Maps):
+<iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!..." 
+  width="600" height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy">
+</iframe>
+
+2. The <embed> Element:
+- Used to embed external content
+- An older tag, but still supported by browsers
+- Self-closing tag
+
+Example:
+<embed src="game.swf" width="500" height="400" type="application/x-shockwave-flash">
+
+3. The <object> Element:
+- Used to embed external content
+- More versatile than <embed>
+- Can include fallback content
+
+Example:
+<object data="data.pdf" type="application/pdf" width="500" height="600">
+  <p>Your browser does not support PDFs. <a href="data.pdf">Download the PDF</a> instead.</p>
+</object>
+
+==========================================
+-->
+
+<!-- Your practice HTML code goes here (outside the comments) -->

@@ -1,0 +1,310 @@
+<!-- 
+==========================================
+                FORMS
+==========================================
+
+------------------------------------------
+FORM BASICS
+------------------------------------------
+
+- The <form> element is used to create an HTML form for user input
+- A form can contain various input elements like text fields, checkboxes, radio buttons, submit buttons, etc.
+- Forms are used to collect user input that is typically sent to a server for processing
+
+Basic Form Structure:
+<form action="/submit-form" method="post">
+  [Form elements go here]
+  <input type="submit" value="Submit">
+</form>
+
+Form Attributes:
+- action: Specifies where to send the form data when submitted
+- method: Specifies the HTTP method to use when sending form data (get or post)
+- target: Specifies where to display the response after submitting the form
+- enctype: Specifies how form data should be encoded when submitting to the server (used for file uploads)
+- autocomplete: Specifies whether the form should have autocomplete on or off
+- novalidate: Specifies that the form should not be validated when submitted
+
+Example:
+<form action="/upload" method="post" enctype="multipart/form-data" autocomplete="off" novalidate>
+  [Form elements go here]
+</form>
+
+------------------------------------------
+INPUT FIELDS
+------------------------------------------
+
+- The <input> element is the most used form element
+- The type attribute specifies what kind of input element to display
+
+Text Input:
+<input type="text" name="username" placeholder="Enter username">
+
+Password Input:
+<input type="password" name="password" placeholder="Enter password">
+
+Email Input:
+<input type="email" name="email" placeholder="Enter email">
+
+Number Input:
+<input type="number" name="quantity" min="1" max="5">
+
+Date Input:
+<input type="date" name="birthday">
+
+Color Input:
+<input type="color" name="favcolor">
+
+Range Input (Slider):
+<input type="range" name="volume" min="0" max="100" step="10">
+
+File Input:
+<input type="file" name="fileupload">
+
+Hidden Input:
+<input type="hidden" name="userid" value="12345">
+
+Radio Buttons:
+<input type="radio" id="male" name="gender" value="male">
+<label for="male">Male</label>
+<input type="radio" id="female" name="gender" value="female">
+<label for="female">Female</label>
+
+Checkboxes:
+<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+<label for="vehicle1">I have a bike</label>
+<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+<label for="vehicle2">I have a car</label>
+
+Common Input Attributes:
+- name: Specifies the name of an input element (used when submitting the form)
+- value: Specifies the initial value of an input element
+- placeholder: Specifies a short hint that describes the expected value
+- required: Specifies that an input field must be filled out before submitting the form
+- disabled: Specifies that an input field should be disabled
+- readonly: Specifies that an input field is read-only
+- autofocus: Specifies that an input field should automatically get focus when the page loads
+- min, max: Specifies the minimum and maximum values for an input field
+- pattern: Specifies a regular expression that the input field's value is checked against
+- step: Specifies the legal number intervals for an input field
+
+------------------------------------------
+LABELS
+------------------------------------------
+
+- The <label> element defines a label for several form elements
+- The for attribute of the <label> tag should be equal to the id attribute of the related element to bind them together
+- Labels are important for accessibility and usability
+
+Example:
+<label for="username">Username:</label>
+<input type="text" id="username" name="username">
+
+Implicit Labels (wrapping the input):
+<label>
+  Username:
+  <input type="text" name="username">
+</label>
+
+------------------------------------------
+BUTTONS
+------------------------------------------
+
+1. Submit Button:
+- Submits the form data to the server
+<input type="submit" value="Submit">
+or
+<button type="submit">Submit</button>
+
+2. Reset Button:
+- Resets all form values to default values
+<input type="reset" value="Reset">
+or
+<button type="reset">Reset</button>
+
+3. Regular Button:
+- Used for JavaScript functionality
+<input type="button" value="Click Me" onclick="alert('Hello!')">
+or
+<button type="button" onclick="alert('Hello!')">Click Me</button>
+
+Button vs Input:
+- The <button> element provides more flexibility for styling and can contain HTML content
+- The <input type="button"> is self-closing and can only contain text via the value attribute
+
+------------------------------------------
+DROPDOWNS
+------------------------------------------
+
+1. Select Dropdown:
+- The <select> element defines a dropdown list
+- The <option> elements define the available options in the list
+
+Basic Dropdown:
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+
+Dropdown with Option Groups:
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars">
+  <optgroup label="Swedish Cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+  </optgroup>
+  <optgroup label="German Cars">
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </optgroup>
+</select>
+
+Multiple Selection:
+<label for="cars">Choose cars:</label>
+<select id="cars" name="cars" multiple>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+
+Select Attributes:
+- multiple: Allows multiple selections
+- size: Specifies the number of visible options
+- required: Specifies that the user must select an option
+- disabled: Disables the dropdown
+
+Option Attributes:
+- selected: Specifies that an option should be pre-selected when the page loads
+- disabled: Specifies that an option should be disabled
+- value: Specifies the value to be sent to the server
+
+------------------------------------------
+TEXTAREA
+------------------------------------------
+
+- The <textarea> element defines a multi-line input field
+- Unlike the <input> element, you can write as many lines of text as you want in a textarea
+
+Basic Textarea:
+<label for="message">Message:</label>
+<textarea id="message" name="message" rows="4" cols="50">
+Enter your message here...
+</textarea>
+
+Textarea Attributes:
+- rows: Specifies the visible number of lines
+- cols: Specifies the visible width
+- wrap: Specifies how the text should be wrapped (soft, hard, off)
+- maxlength: Specifies the maximum number of characters allowed
+- placeholder: Specifies a short hint that describes the expected value
+- required: Specifies that the textarea must be filled out before submitting the form
+- readonly: Specifies that the textarea is read-only
+- disabled: Specifies that the textarea should be disabled
+
+------------------------------------------
+FORM VALIDATION BASICS
+------------------------------------------
+
+HTML5 provides built-in form validation features that can be used to ensure data is in the correct format before submitting to the server.
+
+1. Required Fields:
+<input type="text" name="username" required>
+
+2. Input Types:
+- Using specific input types like email, url, number, etc. provides automatic validation
+<input type="email" name="email">
+
+3. Pattern Attribute:
+- Validates input against a regular expression
+<input type="text" name="username" pattern="[a-zA-Z0-9]+" title="Only alphanumeric characters allowed">
+
+4. Min and Max Attributes:
+- For number and date inputs
+<input type="number" name="age" min="18" max="100">
+
+5. MinLength and MaxLength Attributes:
+- For text inputs
+<input type="text" name="username" minlength="3" maxlength="15">
+
+6. Custom Validation with JavaScript:
+<form onsubmit="return validateForm()">
+  <input type="text" id="username" name="username">
+  <input type="submit" value="Submit">
+</form>
+
+function validateForm() {
+  let username = document.getElementById("username").value;
+  if (username == "") {
+    alert("Username must be filled out");
+    return false;
+  }
+  return true;
+}
+
+7. Validation Feedback:
+- The :valid and :invalid CSS pseudo-classes can be used to style valid and invalid form elements
+input:valid {
+  border: 2px solid green;
+}
+input:invalid {
+  border: 2px solid red;
+}
+
+8. Disabling HTML5 Validation:
+- Add the novalidate attribute to the form element
+<form novalidate>
+  [Form elements]
+</form>
+
+------------------------------------------
+FIELDSET AND LEGEND
+------------------------------------------
+
+- The <fieldset> element is used to group related elements in a form
+- The <legend> element defines a caption for the <fieldset> element
+
+Example:
+<form>
+  <fieldset>
+    <legend>Personal Information:</legend>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+  </fieldset>
+  <fieldset>
+    <legend>Contact Information:</legend>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone"><br><br>
+  </fieldset>
+  <input type="submit" value="Submit">
+</form>
+
+------------------------------------------
+DATALIST
+------------------------------------------
+
+- The <datalist> element specifies a list of pre-defined options for an <input> element
+- The list attribute of the <input> element must refer to the id attribute of the <datalist> element
+
+Example:
+<label for="browser">Choose your browser:</label>
+<input list="browsers" name="browser" id="browser">
+<datalist id="browsers">
+  <option value="Edge">
+  <option value="Firefox">
+  <option value="Chrome">
+  <option value="Opera">
+  <option value="Safari">
+</datalist>
+
+==========================================
+-->
+
+<!-- Your practice HTML code goes here (outside the comments) -->
